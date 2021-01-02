@@ -6,7 +6,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // Create the blog posts' index page.
-  const indexPage = path.resolve('./src/pages/index.js')
+  const indexPage = path.resolve('./src/pages/index.jsx')
   createPage({
     path: `posts`,
     component: indexPage,
