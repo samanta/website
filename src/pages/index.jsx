@@ -18,7 +18,7 @@ export default function Invento(props) {
   const location = get(props, 'location')
 
   // ConvertKit
-  const config = {
+  const convertKitConfig = {
     formId: 1911630,
     template: 'mills',
     emailPlaceholder: 'Enter an email address',
@@ -190,7 +190,7 @@ export const Footer = () => (
         Emails are rare but juicy. I share product design career tips and
         resources that you can use on the job.
       </p>
-      <ConvertKitForm newTab="true" />
+      <ConvertKitForm {...convertKitConfig} newTab="true" />
       <p>
         This is a static site build with Gatsby, CosmicJS and deployed with
         Netlify. The typefaces used are Shrikhand and DM Sans. Check out the
