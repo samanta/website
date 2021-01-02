@@ -14,8 +14,8 @@ export default function Invento(props) {
   const links = get(props, 'data.cosmicjsLinks')
 
   // Get utm source
-  const url = new URLSearchParams(props.location.search)
-  const source = url.get('utm_source')
+  // const url = new URLSearchParams(props.location.search)
+  const source = '' //url.get('utm_source')
 
   return (
     <div id="links" ref={rootRef}>

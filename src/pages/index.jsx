@@ -41,8 +41,8 @@ export default function Invento(props) {
     }
   }, [])
 
-  const url = new URLSearchParams(props.location.search)
-  const source = url.get('utm_source')
+  // const url = new URLSearchParams(props.location.search)
+  const source = '' //url.get('utm_source')
 
   return (
     <div id="home" ref={rootRef}>
