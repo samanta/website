@@ -6,7 +6,6 @@ import { graphql } from 'gatsby'
 import BackgroundImage from 'gatsby-background-image'
 
 import Layout from '../components/layout'
-import { rhythm, scale } from '../utils/typography'
 
 class PageTemplate extends React.Component {
   render() {
@@ -29,11 +28,7 @@ class PageTemplate extends React.Component {
         `}
         </style>
         <Helmet title={`${page.title} | ${siteTitle}`} />
-        <h1
-          style={{
-            marginTop: rhythm(1),
-          }}
-        >
+        <h1>
           {page.title}
         </h1>
         <div
