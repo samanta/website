@@ -17,14 +17,6 @@ export default function Invento(props) {
   const pages = get(props, 'data.allCosmicjsPages.edges')
   const location = get(props, 'location')
 
-  // ConvertKit
-  const convertKitConfig = {
-    formId: 1911630,
-    template: 'mills',
-    emailPlaceholder: 'Enter an email address',
-    submitText: 'Sign up',
-  }
-
   // rellax library (parallax animation)
   useEffect(() => {
     let rellax
@@ -181,7 +173,15 @@ export default function Invento(props) {
 }
 
 // Footer
-export const Footer = () => (
+export const Footer = () => {
+  // ConvertKit
+  const convertKitConfig = {
+    formId: 1911630,
+    emailPlaceholder: 'Enter an email address',
+    submitText: 'Sign up',
+  }
+  
+  return (
   <footer className="bleed-to-edge">
     <div>{/* <SvgFooter /> */}</div>
     <div className="content container" id="newsletter">
@@ -199,7 +199,7 @@ export const Footer = () => (
       </p>
     </div>
   </footer>
-)
+)}
 
 // SVGs
 const SvgLogo = () => (
