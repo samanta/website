@@ -82,24 +82,6 @@ export default ({ children, location }) => (
           <div>
             {children}
           </div>
-          <footer>
-            powered by&nbsp;
-            <a>
-              <img
-                src={gatsbyLogo}
-                alt="Gatsby JS"/>
-              <strong>Gatsby</strong>
-            </a>
-            &nbsp;and&nbsp;
-            <a
-              target="_blank"
-              href="https://cosmicjs.com">
-              <img
-                src={cosmicjsLogo}
-                alt="Cosmic JS"/>
-              <strong>Cosmic JS</strong>
-            </a>
-          </footer>
         </div>
       )
     }}
