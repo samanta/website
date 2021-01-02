@@ -41,12 +41,8 @@ export default function Invento(props) {
     }
   }, [])
 
-  const url = new window.URL(document.location)
-  const source = url.searchParams.get('utm_source')
-
-  // if (source === 'tw') {
-  //   return <div>twitter</div>
-  // }
+  const url = new URLSearchParams(props.location.search)
+  const source = url.get('utm_source')
 
   return (
     <div id="home" ref={rootRef}>
