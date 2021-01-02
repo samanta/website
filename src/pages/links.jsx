@@ -40,14 +40,13 @@ export default function Invento(props) {
             </p>
             <p className="large">
               Hi, person from
-              {source == 'website' && ' the internet'}
+              {!source && ' the internet'}
               {source == 'twitter' && ' Twitter'}
               {source == 'youtube' && ' YouTube'}
               {source == 'instagram' && ' Instagram'} 👋🏼
-              {source == 'website' &&
-                ' Here are other places you can find me online.'}
-              {source !== 'website' &&
-                " My name is Samanta Aquino. I'm a senior product designer based in Stockholm."}
+              {source
+                ? " My name is Samanta Aquino. I'm a senior product designer based in Stockholm."
+                : ' Here are other places you can find me online.'}
             </p>
           </section>
           <section className="quicklinks">
