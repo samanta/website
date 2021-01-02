@@ -4,13 +4,14 @@ import { Link } from 'gatsby'
 import get from 'lodash/get'
 import React, { useEffect, useRef } from 'react'
 import { Footer, MyFonts } from './index'
+import { Helmet } from 'react-helmet'
 
 export default function Invento(props) {
   const rootRef = useRef(null)
 
   const posts = get(props, 'data.allCosmicjsPosts.edges')
   const settings = get(props, 'data.cosmicjsSettings.metadata')
-  const links = get(props, 'data.cosmicjsLinks.metadata')
+  const links = get(props, 'data.cosmicjsLinks')
 
   // Get utm source
   const url = new window.URL(document.location)
@@ -18,6 +19,7 @@ export default function Invento(props) {
 
   return (
     <div id="links" ref={rootRef}>
+      <Helmet title={`${links.title} | ${settings.site_title}`} />
       <MyFonts />
 
       <main className="container">
@@ -38,18 +40,20 @@ export default function Invento(props) {
             </p>
             <p className="large">
               Hi, person from
-              {source == 'mysite' && ' the internet'}
-              {source == 'tw' && ' Twitter'}
-              {source == 'yt' && ' YouTube'}
-              {source == 'ig' && ' Instagram'} 👋🏼
-              {source == 'mysite' &&
+              {source == 'website' && ' the internet'}
+              {source == 'twitter' && ' Twitter'}
+              {source == 'youtube' && ' YouTube'}
+              {source == 'instagram' && ' Instagram'} 👋🏼
+              {source == 'website' &&
                 ' Here are other places you can find me online.'}
-              {source !== 'mysite' &&
+              {source !== 'website' &&
                 " My name is Samanta Aquino. I'm a senior product designer based in Stockholm."}
             </p>
           </section>
           <section className="quicklinks">
-            <div dangerouslySetInnerHTML={{ __html: links.quicklinks }} />
+            <div
+              dangerouslySetInnerHTML={{ __html: links.metadata.quicklinks }}
+            />
             <ul>
               <li>
                 <a href="https://www.instagram.com/samanta.ux/">
@@ -133,7 +137,7 @@ export default function Invento(props) {
           </section>
           <section className="videos bleed-to-edge">
             <h2 className="heading">YouTube</h2>
-            <div dangerouslySetInnerHTML={{ __html: links.videos }} />
+            <div dangerouslySetInnerHTML={{ __html: links.metadata.videos }} />
           </section>
           <section className="blog bleed-to-edge">
             <h2 className="heading">Blog</h2>
@@ -176,14 +180,6 @@ export const pageQuery = graphql`
         }
       }
     }
-    allCosmicjsPages(sort: { fields: [created], order: DESC }, limit: 1000) {
-      edges {
-        node {
-          slug
-          title
-        }
-      }
-    }
     cosmicjsSettings(slug: { eq: "general" }) {
       metadata {
         site_title
@@ -195,6 +191,7 @@ export const pageQuery = graphql`
       }
     }
     cosmicjsLinks(slug: { eq: "links" }) {
+      title
       metadata {
         quicklinks
         videos

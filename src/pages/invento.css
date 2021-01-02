@@ -485,7 +485,7 @@ footer .content {
 
 #links .blog,
 #links .videos {
-  padding: 1rem 2rem 4rem;
+  padding: 1rem 2rem 6rem;
   clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
   margin: 1rem 0;
 }
@@ -500,7 +500,6 @@ footer .content {
 #links .lastest-articles li a {
   display: block;
   padding: 1rem 0;
-  border-bottom: 1px dotted var(--blackWidow);
 }
 
 #links .videos {
