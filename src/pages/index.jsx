@@ -50,6 +50,7 @@ export default function Invento(props) {
 
   return (
     <div id="home" ref={rootRef}>
+      <Helmet title={settings.site_title} />
       <MyFonts />
       {/* <SvgSponge /> */}
       <a class="skip-to-content-link" href="#main">
