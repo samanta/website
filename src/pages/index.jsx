@@ -1,5 +1,3 @@
-import 'normalize.css'
-import './invento.css'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 import get from 'lodash/get'
@@ -7,6 +5,8 @@ import React, { useEffect, useRef } from 'react'
 import Rellax from 'rellax'
 import { Helmet } from 'react-helmet'
 import ConvertKitForm from 'convertkit-react'
+import 'normalize.css'
+import './invento.css'
 
 export default function Invento(props) {
   const rootRef = useRef(null)
@@ -180,26 +180,27 @@ export const Footer = () => {
     emailPlaceholder: 'Enter an email address',
     submitText: 'Sign up',
   }
-  
+
   return (
-  <footer className="bleed-to-edge">
-    <div>{/* <SvgFooter /> */}</div>
-    <div className="content container" id="newsletter">
-      <h2 className="heading">Subscribe to my newsletter</h2>
-      <p>
-        Emails are rare but juicy. I share product design career tips and
-        resources that you can use on the job.
-      </p>
-      <ConvertKitForm {...convertKitConfig} newTab="true" />
-      <p>
-        This is a static site build with Gatsby, CosmicJS and deployed with
-        Netlify. The typefaces used are Shrikhand and DM Sans. Check out the
-        source code on <a href="https://github.com/samanta">Github</a> for more
-        details.
-      </p>
-    </div>
-  </footer>
-)}
+    <footer className="bleed-to-edge">
+      <div>{/* <SvgFooter /> */}</div>
+      <div className="content container" id="newsletter">
+        <h2 className="heading">Subscribe to my newsletter</h2>
+        <p>
+          Emails are rare but juicy. I share product design career tips and
+          resources that you can use on the job.
+        </p>
+        <ConvertKitForm {...convertKitConfig} newTab="true" />
+        <p>
+          This is a static site build with Gatsby, CosmicJS and deployed with
+          Netlify. The typefaces used are Shrikhand and DM Sans. Check out the
+          source code on <a href="https://github.com/samanta">Github</a> for
+          more details.
+        </p>
+      </div>
+    </footer>
+  )
+}
 
 // SVGs
 const SvgLogo = () => (

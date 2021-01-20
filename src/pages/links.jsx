@@ -1,10 +1,10 @@
-import './invento.css'
 import { graphql } from 'gatsby'
 import { Link } from 'gatsby'
 import get from 'lodash/get'
 import React, { useEffect, useRef } from 'react'
 import { Footer, MyFonts } from './index'
 import { Helmet } from 'react-helmet'
+import './invento.css'
 
 export default function Invento(props) {
   const rootRef = useRef(null)
