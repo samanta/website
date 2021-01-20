@@ -1,5 +1,4 @@
-import { graphql } from 'gatsby'
-import { Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import React, { useEffect, useRef } from 'react'
 import { Footer, MyFonts } from './index'
