@@ -21,7 +21,8 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={location}>
-        <Helmet title={`${post.title} | ${siteTitle}`} />
+        <Helmet title={`${post.title} | ${siteTitle}`} ><html lang="en" />
+      </Helmet>
         <div>
           <Link to="/">← Back to Posts</Link>
         </div>

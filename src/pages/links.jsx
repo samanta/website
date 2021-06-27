@@ -18,7 +18,9 @@ export default function Invento(props) {
 
   return (
     <div id="links" ref={rootRef}>
-      <Helmet title={`${links.title} | ${settings.site_title}`} />
+      <Helmet title={`${links.title} | ${settings.site_title}`}>
+        <html lang="en" />
+      </Helmet>
       <MyFonts />
 
       <main className="container">

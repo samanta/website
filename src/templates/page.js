@@ -9,7 +9,6 @@ import Layout from '../components/layout'
 
 class PageTemplate extends React.Component {
   render() {
-
     const page = this.props.data.cosmicjsPages
     const siteTitle = get(
       this.props,
@@ -27,10 +26,10 @@ class PageTemplate extends React.Component {
 
         `}
         </style>
-        <Helmet title={`${page.title} | ${siteTitle}`} />
-        <h1>
-          {page.title}
-        </h1>
+        <Helmet title={`${page.title} | ${siteTitle}`}>
+          <html lang="en" />
+        </Helmet>
+        <h1>{page.title}</h1>
         <div
           className="post-content"
           dangerouslySetInnerHTML={{ __html: page.content }}

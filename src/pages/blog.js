@@ -20,7 +20,8 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={location}>
-        <Helmet title={siteTitle} />
+        <Helmet title={siteTitle}  ><html lang="en" />
+      </Helmet>
 
         {pages.map(({ node }) =>
           <Link to={node.slug} key={node.slug}>{node.title}</Link>
